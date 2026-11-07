@@ -1,0 +1,7 @@
+function rotate(n::Integer, c::Char)
+    base = 'a' <= c <= 'z' ? 'a' : 'A' <= c <= 'Z' ? 'A' : return c
+
+    return base + mod(c - base + n, 26)
+end
+
+rotate(n::Integer, str::AbstractString) = map(c -> rotate(n, c), str)
